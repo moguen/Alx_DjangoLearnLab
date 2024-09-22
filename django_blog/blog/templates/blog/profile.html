@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<h1>Profile</h1>
+<p>Username: {{ profile.user.username }}</p>
+<p> Bio: {{ profile.bio }}</p>
+<p>Profile Picture: 
+    {% if profile.profile_picture %}
+        <img src="{{ profile.profile_picture.url }}" alt="Profile Picture">
+    {% else %}
+        <p>No profile picture</p>
+    {% endif %}
+</p>
+<a href="{% url 'profile_edit' %}"> Edit Profile</a>
+
+{% endblock %}
